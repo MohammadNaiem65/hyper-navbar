@@ -17,19 +17,19 @@ body {
 }
 
 #menu[data-index='0']>#menu-background-pattern {
-    background-position-y: 50%;
+    background-position-y: center;
 }
 
 #menu[data-index='1']>#menu-background-pattern {
-    background-position-y: 300%;
+    background-position-y: calc(100vh - 50%);
 }
 
 #menu[data-index='2']>#menu-background-pattern {
-    background-position-y: calc(-1 * calc(100vh));
+    background-position-y: calc(calc(100vh - 50%) + calc(100vh - 50%) - 50%);
 }
 
 #menu[data-index='3']>#menu-background-pattern {
-    background-position-y: 800%;
+    background-position-y: calc(calc(calc(calc(100vh - 50%) + calc(100vh - 50%)) + calc(100vh - 100%)) - 50%);
 }
 
 #menu-items {
