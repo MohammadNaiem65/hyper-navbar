@@ -29,7 +29,7 @@ body {
 }
 
 #menu[data-index='3']>#menu-background-pattern {
-    background-position-y: calc(calc(calc(calc(100vh - 50%) + calc(100vh - 50%)) + calc(100vh - 100%)) - 50%);
+    background-position-y: calc(calc(calc(100vh - 50%) + calc(100vh - 50%) + calc(100vh - 100%)) - 50%);
 }
 
 #menu-items {
