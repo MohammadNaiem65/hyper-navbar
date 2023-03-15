@@ -1,10 +1,7 @@
-let menu = document.querySelector('#menu')
-let items = document.querySelectorAll(".menu-item");
-items.forEach((item, index) => {
+// this block is applying loop on an array of menu-item and when hovered any items of that array, it is setting the data-index of #menu according to that array item's index
+document.querySelectorAll(".menu-item").forEach((item, index) => {
   item.addEventListener("mouseover", () => {
-    menu.dataset.index = index;
+    document.querySelector("#menu").dataset.index = index;
+    console.log(document.querySelector("#menu").dataset.index);
   });
-  item.addEventListener('mouseout', ()=>{
-    delete menu.dataset.index;
-  })
 });

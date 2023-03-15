@@ -1,78 +1,78 @@
-* {
+*,
+::before,
+::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: hsl(211, 12%, 20%);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: hsl(221, 12%, 20%);
 }
 
-#menu {
-    height: 100vh;
-    display: grid;
-    align-content: center;
-    position: relative;
-}
-
-#menu[data-index='0']>#menu-background-pattern {
-    background-position-y: center;
-}
-
-#menu[data-index='1']>#menu-background-pattern {
-    background-position-y: calc(100vh - 50%);
-}
-
-#menu[data-index='2']>#menu-background-pattern {
-    background-position-y: calc(calc(100vh - 50%) + calc(100vh - 50%) - 50%);
-}
-
-#menu[data-index='3']>#menu-background-pattern {
-    background-position-y: calc(calc(calc(100vh - 50%) + calc(100vh - 50%) + calc(100vh - 100%)) - 50%);
-}
 
 #menu-items {
-    width: 10rem;
-    margin-left: 10rem;
-    transition: opacity 700ms ease;
-    z-index: 2;
+    height: 100vh;
+    width: 11rem;
+    margin-left: 7rem;
+    display: grid;
+    align-content: center;
 }
 
 .menu-item {
-    color: whitesmoke;
+    width: 100%;
     display: block;
-    text-decoration: none;
-    font-size: 3rem;
     padding-bottom: 1rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3rem;
+    transition: all 700ms ease;
+    z-index: 1;
 }
 
-
 #menu-items:hover .menu-item {
-    opacity: 0.6;
+    opacity: .5;
 }
 
 #menu-items:hover .menu-item:hover {
     opacity: 1;
 }
 
-#menu-items:hover~#menu-background-pattern {
-    opacity: .1;
-    background-size: 25rem;
-}
-
-#menu-background-pattern {
+#menu-pattern {
     height: 100vh;
     width: 100vw;
-    background-image: url('../img/square.png');
-    background-position-y: center;
-    background-repeat: repeat-y;
+    background-image: url(../assets/square.png);
     background-size: 26rem;
-    opacity: .3;
+    background-repeat: repeat-y;
+    background-position: 0 50%;
 
     position: absolute;
+    top: 0;
     left: -5rem;
-    /* top: 50%; */
-    /* transform: translateY(-50%); */
+    opacity: .5;
+    z-index: 0;
     transition: all 700ms ease;
+}
+
+/* Position of #menu-background-pattern according to #menu[data-index] data attribute.*/
+#menu[data-index='0'] > #menu-pattern{
+    background-position-y: 50%;
+}
+#menu[data-index='1'] > #menu-pattern{
+    background-position-y: calc(100vh - 50%);
+}
+#menu[data-index='2'] > #menu-pattern{
+    background-position-y: calc(calc(100vh - 50%) + calc(100vh - 100%));
+}
+#menu[data-index='3'] > #menu-pattern{
+    background-position-y: calc(calc(100vh - 50%) + calc(200vh - 200%));
+}
+#menu[data-index='4'] > #menu-pattern{
+    background-position-y: calc(calc(100vh - 50%) + calc(300vh - 300%));
+}
+
+#menu-items:hover ~ #menu-pattern{
+    opacity: .2;
+    background-size: 24rem;
 }
